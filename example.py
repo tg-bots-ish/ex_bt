@@ -5,7 +5,7 @@ import telebot
 TOKEN = "734820541:AAEkVd8f-haWGhYPmiB3AHXbJtAqMOcNWqY"
 bot = telebot.TeleBot(TOKEN)
 
-white_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'] + ['*', '/', '+', '-', '%', ' ']
+white_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'] + ['*', '/', '+', '-', '%', ' '] + ['(', ')']
 
 
 @bot.message_handler(commands=['start'])
