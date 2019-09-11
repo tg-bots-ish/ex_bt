@@ -24,14 +24,10 @@ def text_handler(message):
         print("It was not good")
         bot.send_message(chat_id, "I can't understand")
     else:
-        try:
-            print("I want to do it", text)
-            result = eval(str(text))
-            print("I did it")
-            bot.send_message(chat_id, text + '=' + result)
-        except:
-            print("I cant")
-            bot.send_message(chat_id, "I can't understand")
+        print("I want to do it", text)
+        result = eval(str(text))
+        print("I did it")
+        bot.send_message(chat_id, text + '=' + result)
 
 
 bot.polling(none_stop=True)
