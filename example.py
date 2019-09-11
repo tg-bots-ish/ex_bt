@@ -1,3 +1,5 @@
+from ast import literal_eval
+
 import telebot
 
 TOKEN = "734820541:AAEkVd8f-haWGhYPmiB3AHXbJtAqMOcNWqY"
@@ -16,14 +18,18 @@ def text_handler(message):
     text = message.text.lower()
     chat_id = message.chat.id
     good = all(map(lambda x: x in white_list, text))
+    print(good, text, map(lambda x: x in white_list, text))
     if not good:
-        bot.send_message(chat_id, 'I don`t understand')
+        print("It was not good")
+        bot.send_message(chat_id, "I can't understand")
     else:
         try:
-            result = eval(text)
+            print("I want to do it")
+            result = literal_eval(text)
             bot.send_message(chat_id, text + '=' + result)
         except:
-            bot.send_message(chat_id, 'I don`t understand')
+            print("I cant")
+            bot.send_message(chat_id, "I can't understand")
 
 
 bot.polling(none_stop=True)
