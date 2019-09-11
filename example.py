@@ -18,7 +18,7 @@ def text_handler(message):
     text = message.text.lower()
     chat_id = message.chat.id
     good = all(map(lambda x: x in white_list, text))
-    print(good, text, map(lambda x: x in white_list, text))
+    print(good, text, list(map(lambda x: x in white_list, text)))
     if not good:
         print("It was not good")
         bot.send_message(chat_id, "I can't understand")
@@ -33,3 +33,4 @@ def text_handler(message):
 
 
 bot.polling(none_stop=True)
+
