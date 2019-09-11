@@ -27,6 +27,7 @@ def text_handler(message):
         try:
             print("I want to do it", text)
             result = eval(str(text))
+            print("I did it")
             bot.send_message(chat_id, text + '=' + result)
         except:
             print("I cant")
